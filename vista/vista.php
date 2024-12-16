@@ -20,18 +20,21 @@
             </tr>
         <tbody>
             <?php
-            for ($i = 0; $i < count($datos); $i++) {
+            if (is_array($datos) && count($datos) > 0) {
+                for ($i = 0; $i < count($datos); $i++) {
             ?>
-                <tr>
-                    <td><?php echo $datos[$i]['nombre']; ?></td>
-                    <td><?php echo $datos[$i]['apellidos']; ?></td>
-                    <td><?php echo $datos[$i]['telefono']; ?></td>
-                    <td><?php echo $datos[$i]['departamento']; ?></td>
-                    <td><?php echo "<a href=\"../controlador/editar.php?id={$datos[$i]['id']}\">Editar</a>"?></td>
-                    <td><?php echo "<a href=\"../controlador/borrar.php?id={$datos[$i]['id']}\">Borrar</a>"?></td>
-                    
-                </tr>
+                    <tr>
+                        <td><?php echo $datos[$i]['nombre']; ?></td>
+                        <td><?php echo $datos[$i]['apellidos']; ?></td>
+                        <td><?php echo $datos[$i]['telefono']; ?></td>
+                        <td><?php echo $datos[$i]['departamento']; ?></td>
+                        <td><?php echo "<a href=\"../controlador/editar.php?id={$datos[$i]['id']}\">Editar</a>"?></td>
+                        <td><?php echo "<a href=\"../controlador/borrar.php?id={$datos[$i]['id']}\">Borrar</a>"?></td>
+                    </tr>
             <?php
+                }
+            } else {
+                echo "<tr><td colspan='6'>No hay empleados.</td></tr>";
             }
             ?>
         </tbody>
@@ -39,6 +42,4 @@
     <br>
     <a href="../index.php" style="color: green;">Volver a la pagina principal</a>
 </body>
-</body>
-
 </html>

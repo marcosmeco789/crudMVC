@@ -11,8 +11,9 @@
     <h1>Editar empleado</h1>
     <form action="../controlador/actualizar.php" method="post">
         <?php
-        for ($i = 0; $i < count($datos); $i++) { // PReguntar por que no funciona
+        for ($i = 0; $i < count($datos); $i++) { 
         ?>
+            <input type="hidden" name="id" value="<?php echo $datos[$i]['id']; ?>">
             <label for="">Nombre: </label><input type="text" name="nombre" id="" value="<?php echo $datos[$i]['nombre']; ?>">
             <br>
             <br>
