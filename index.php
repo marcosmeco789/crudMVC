@@ -40,7 +40,7 @@
     </table>
     </form>
     <hr>
-    <h2>Listdo de los empleados</h2>
+    
     <hr>
     <a href="controlador/controlador.php">Mostrar listado de los empleados</a>
 
